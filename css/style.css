@@ -1,0 +1,10 @@
+body { background: #041221; }
+.media-content { overflow: hidden; }
+.hotel-description p { margin-bottom: 0 !important; }
+
+#currency-selector{
+  margin: 10px;
+  position:fixed;
+  top:0;
+  right:0;
+}

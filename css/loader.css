@@ -1,0 +1,157 @@
+#loader-page {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background: #041221;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader-container {
+  width: 400px;
+  height: 400px;
+  margin: 0 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.ex {
+  width: 1px;
+  height: 30px;
+  background: #fff;
+}
+
+#x-right {
+  margin: 0 60px;
+  animation: right 4s cubic-bezier(0, 0, 0.06, 1) infinite;
+  transform-origin: center;
+}
+
+#x-left {
+  margin: 0 60px;
+  animation: left 4s cubic-bezier(0, 0, 0.06, 1) infinite;
+  transform-origin: center;
+}
+
+@keyframes right {
+
+  0% {
+    margin: 0 60px;
+    transform: rotate(0deg);
+  }
+
+  10% {
+    margin: 0;
+    transform: rotate(0deg);
+  }
+
+  20% {
+    margin: 0;
+    transform: rotate(0deg);
+  }
+
+  30% {
+    margin: 0;
+    transform: rotate(45deg);
+  }
+
+  40% {
+    margin: 0;
+    transform: rotate(405deg);
+  }
+
+  50% {
+    margin: 0;
+    transform: rotate(405deg);
+  }
+
+  60% {
+    margin: 0;
+    transform: rotate(360deg);
+  }
+
+  70% {
+    margin: 0;
+    transform: rotate(360deg);
+  }
+
+  80% {
+    margin: 0 60px;
+    transform: rotate(360deg);
+  }
+
+  90% {
+    margin: 0 60px;
+    transform: rotate(360deg);
+  }
+
+  100% {
+    margin: 0 60px;
+    transform: rotate(360deg);
+  }
+
+}
+
+
+@keyframes left {
+
+  0% {
+    margin: 0 60px;
+    transform: rotate(0deg);
+  }
+
+  10% {
+    margin: 0;
+    transform: rotate(0deg);
+  }
+
+  20% {
+    margin: 0;
+    transform: rotate(0deg);
+  }
+
+  30% {
+    margin: 0;
+    transform: rotate(-45deg);
+  }
+
+  40% {
+    margin: 0;
+    transform: rotate(315deg);
+  }
+
+  50% {
+    margin: 0;
+    transform: rotate(315deg);
+  }
+
+  60% {
+    margin: 0;
+    transform: rotate(360deg);
+  }
+
+  70% {
+    margin: 0;
+    transform: rotate(360deg);
+  }
+
+  80% {
+    margin: 0 60px;
+    transform: rotate(360deg);
+  }
+
+  90% {
+    margin: 0 60px;
+    transform: rotate(360deg);
+  }
+
+  100% {
+    margin: 0 60px;
+    transform: rotate(360deg);
+  }
+
+}

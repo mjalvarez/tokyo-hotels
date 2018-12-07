@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Tokyo Hotels</title>
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.css'>
+  <link rel="stylesheet prefetch" href="css/style.css">
+  <link rel="stylesheet prefetch" href="css/loader.css">
+  <script type="text/javascript" src="js/babel.js" defer></script>
+  <script type="text/javascript" src="js/js.cookie.js" defer></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/vue/2.2.1/vue.js" defer></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.1/axios.js" defer></script>
+  <script type="text/jsx" src="js/index.js" data-presets="es2017,react,stage-0" data-plugins="transform-decorators-legacy" defer> </script>
+</head>
+
+<body>
+
+  <div id="app">
+    <div v-if="loading">
+      <div id="loader-page">
+        <div class="loader-container">
+          <div class="ex" id="x-right"></div>
+          <div class="ex" id="x-left"></div>
+        </div>
+      </div>
+    </div>
+    <div v-else>
+      <div class="control" id="currency-selector">
+        <div class="select">
+          <select v-model="currency" @change="onCurrencySelect()">
+            <option value="USD">USD</option>
+            <option value="SGD">SGD</option>
+            <option value="CNY">CNY</option>
+            <option value="KRW">KRW</option>
+            <option value="JPY">JPY</option>
+            <option value="IDR">IDR</option>
+          </select>
+        </div>
+      </div>
+      <div class="container">
+        <div class="box content" v-for="hotel in hotels" :key="hotel.id" >
+          <article class="media icon-box">
+            <figure class="media-left">
+              <p class="image">
+                <img v-bind:src="hotel.photo" alt="Image">
+              </p>
+              <p class="has-text-grey-light is-size-7">
+                {{hotel.address}}
+              </p>
+              <h4 class="has-text-grey-light is-size-1">
+                {{hotel.rating}}
+              </h4>
+
+            </figure>
+
+            <div class="media-content mt-50">
+              <div class="content">
+                <p>
+                  <span class="icon-box-title">
+                    <p class="title is-4">
+                      {{hotel.name}}
+                      <span class="has-text-warning" v-for="n in hotel.stars">*</span>
+
+                    </p>
+                  </span>
+                  <span class="icon-box-text">
+                    <div v-html="hotel.description" class="is-size-7 hotel-description">
+                      {{hotel.description}}
+                    </div>
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div class="media-right">
+              <h2 class="has-text-primary">
+                <span class="has-text-grey-light">{{currency}}</span>
+                {{hotel.rounded_price}}
+              </h2>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
