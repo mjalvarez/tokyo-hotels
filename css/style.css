@@ -7,4 +7,5 @@ body { background: #041221; }
   position:fixed;
   top:0;
   right:0;
+  z-index: 100;
 }
